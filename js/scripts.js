@@ -26,18 +26,17 @@ $(document).ready(function() {
 
     newAccount.balance = initialDeposit;
     newAccount.customerName = customerName;
+    $(".customer-name").text(customerName);
     $(".account-balance").show();
     $(".result").text(newAccount.balance);
-    $("input#customer-name").val("");
     $("input#initial-deposit").val();
-
-
+        // $("input#customer-name").val(""); <<deleted after Tuck left
 
 
     $("form#account").submit(function(event) {
       var newDeposit = parseInt($("input#deposit").val()) || 0;
       var newWithdraw = parseInt($("input#withdraw").val()) || 0;
-
+        // Adding the || 0 makes a NaN return to zero
       newAccount.deposit(newDeposit);
       newAccount.withdraw(newWithdraw);
       $(".result").text(newAccount.balance);
