@@ -11,47 +11,55 @@
   <div class="container">
     <h1>Bank Account</h1>
 
-    <div class="row">
+    <div class="column">
       <div class="col-md-6">
-        <h2>Add your customer name:</h2>
-        <form id="new-account">
-          <div class="form-group">
-            <label for="customer-name">Name</label>
-            <input type="text" class="form-control" id="customer-name">
-          </div>
-          <div class="form-group">
-            <label for="initial-deposit">Initial Deposit</label>
-            <input type="text" class="form-control" id="initial-deposit">
-          </div>
+        <div class ="create-account">
+          <h2>Add your customer name:</h2>
+          <form id="new-account">
+            <div class="form-group">
+              <label for="customer-name">Name</label>
+              <input type="text" class="form-control" id="customer-name">
+            </div>
+            <div class="form-group">
+              <label for="initial-deposit">Initial Deposit</label>
+              <input type="text" class="form-control" id="initial-deposit">
+            </div>
 
-          <button type="submit" class="btn">Create Bank Account</button>
-        </form>
-
-
-        <div class="row">
-          <div class="col-md-6">
-            <h2>Deposit Money</h2>
-            <form id="account">
-              <div class="form-group">
-                <label for="deposit">Deposit</label>
-                <input type="text" class="form-control" id="deposit">
-              </div>
-              <div class="form-group">
-                <label for="withdraw">Withdraw Money</label>
-                <input type="text" class="form-control" id="withdraw">
-              </div>
-
-              <button type="submit" class="btn">Submit</button>
-            </form>
-        <h2>Bank Accounts</h2>
-            <ul class="show-account">
-
-            </ul>
-          </div>
+            <button type="submit" class="btn">Create Bank Account</button>
+          </form>
         </div>
       </div>
     </div>
-  </div>
 
-</body>
+    <div class="column">
+    <div class ="col-md-6">
+      <div id="add-deposit">
+          <h1>Deposit or withdraw money</h1>
+        <!-- <div id="show-the-goddamn-name">
+        <h2></h2>
+        </div> -->
+        <form id="account">
+          <div class="form-group">
+            <label for="deposit">Deposit</label>
+            <input type="text" class="form-control" id="deposit">
+          </div>
+          <div class="form-group">
+            <label for="withdraw">Withdraw Money</label>
+            <input type="text" class="form-control" id="withdraw">
+          </div>
+
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="center">
+    <div class="col-md-6">
+      <div class="account-balance">
+        <h2>Balance!</h2>
+        <p><span class="result"></span><p>
+      </div>
+  </div>
+  </div>
+  </div>
+  </body>
 </html>

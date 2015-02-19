@@ -1,12 +1,14 @@
-.show-account {
+.account-balance {
   display: none;
 }
 
-.show-account {
+#show-account {
   cursor: pointer;
   color: #0088cc;
 }
 
-.show-account:hover {
-  text-decoration: underline;
+
+.center {
+  text-align: center;
+
 }

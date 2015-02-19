@@ -20,36 +20,32 @@ $(document).ready(function() {
     event.preventDefault();
 
     var customerName = $("input#customer-name").val();
-    var initialDeposit = $("input#initial-deposit").val();
+    var initialDeposit = parseInt($("input#initial-deposit").val());
     var newAccount = Object.create(BankAccount);
+
+
     newAccount.balance = initialDeposit;
     newAccount.customerName = customerName;
-    $("ul.show-account").append("<li><span class='new-account'>" + newAccount.customerName + " " + newAccount.balance + "</span></li>").show();
+    $(".account-balance").show();
+    $(".result").text(newAccount.balance);
+    $("input#customer-name").val("");
+    $("input#initial-deposit").val();
+
+
 
 
     $("form#account").submit(function(event) {
-      var deposit = $("input#deposit").val();
-      var withdraw = $("input#withdraw").val();
-      var account = Object.create(BankAccount);
-      account.deposit = deposit;
-      account.withdraw = withdraw;
+      var newDeposit = parseInt($("input#deposit").val());
+      var newWithdraw = parseInt($("input#withdraw").val());
+      newAccount.deposit(newDeposit);
+      newAccount.withdraw(newWithdraw);
+      $(".result").text(newAccount.balance);
 
-      account.balance = newAccount.balance + deposit;
-
-      $("ul.show-account").append("<li><span class='new-account'>" + newAccount.customerName + " " + newAccount.balance + "</span></li>");
-
-
-      $("input#customer-name").val("");
-      $("input#initial-deposit").val();
       $("input#deposit").val();
       $("input#withdraw").val();
+      event.preventDefault();
 
-
-
-      $("ul.show-account").last().click(function() {
-        $("ul.show-account").show();
-        $("ul.show-account").text(newAccount);
-      });
     });
+
   });
 });
