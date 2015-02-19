@@ -35,8 +35,9 @@ $(document).ready(function() {
 
 
     $("form#account").submit(function(event) {
-      var newDeposit = parseInt($("input#deposit").val());
-      var newWithdraw = parseInt($("input#withdraw").val());
+      var newDeposit = parseInt($("input#deposit").val()) || 0;
+      var newWithdraw = parseInt($("input#withdraw").val()) || 0;
+
       newAccount.deposit(newDeposit);
       newAccount.withdraw(newWithdraw);
       $(".result").text(newAccount.balance);
